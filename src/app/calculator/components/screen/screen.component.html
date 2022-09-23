@@ -1,1 +1,7 @@
-<p>screen works!</p>
+<div>
+    <p>{{ firstNumber }}</p>
+    <p class="function">{{ currentFunction }}</p>
+    <p>{{ secondNumber }}</p>
+    <hr *ngIf="currentResult !== ''">
+    <p class="result">{{ currentResult }}</p>
+</div>

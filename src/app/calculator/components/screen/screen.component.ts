@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-screen',
+  selector: 'calc-screen',
   templateUrl: './screen.component.html',
   styleUrls: ['./screen.component.scss']
 })
-export class ScreenComponent implements OnInit {
+export class ScreenComponent {
 
-  constructor() { }
+  @Input() firstNumber: string = '3';
 
-  ngOnInit(): void {
-  }
+  @Input() secondNumber: string = '3';
+
+  @Input() currentFunction: string = '+';
+
+  @Input() currentResult: string = '6';
 
 }

@@ -4,7 +4,7 @@ export enum Operators {
     divide='÷',
     multiply='x',
     decimal='.',
-    sign='+/-',
+    sign='+-',
     result='=',
     c='c',
     ac='ac'

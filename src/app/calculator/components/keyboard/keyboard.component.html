@@ -1,1 +1,26 @@
-<p>keyboard works!</p>
+<div class="main-container">
+    <div class="numbers">
+
+        <!-- Numbers -->
+        <div class="container" *ngFor="let items of keyboardNumbers" >
+            <button *ngFor="let item of items" 
+                (click)="onButtonClick(item)">
+                {{ item }}
+            </button>
+        </div>
+
+        <!-- = -->
+        <div class="container">
+            <button (click)="onButtonClick(operators.result)">{{ operators.result }}</button>
+        </div>
+    </div>
+
+    <div>
+
+        <!-- Functions -->
+        <button *ngFor="let items of keyboardFunctions"
+            (click)="onButtonClick(items)">{{ items }}</button>
+        <button (click)="onButtonClick(operators.c)">{{ operators.c }}</button>
+    </div>
+
+</div>
