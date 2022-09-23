@@ -6,6 +6,5 @@ export enum Operators {
     decimal='.',
     sign='+-',
     result='=',
-    c='c',
-    ac='ac'
+    c='c'
 }

@@ -1,7 +1,39 @@
-<div>
+<!-- <div>
     <p>{{ firstNumber }}</p>
     <p class="function">{{ currentFunction }}</p>
     <p>{{ secondNumber }}</p>
     <hr *ngIf="currentResult !== ''">
     <p class="result">{{ currentResult }}</p>
+</div> -->
+
+<div>
+    <!-- first number -->
+    <p *ngIf="isNotANumber(firstNumber); else first">
+        {{ '-' }}
+    </p>
+    <ng-template #first>
+        <p>{{ firstNumber | number: '1.0-9' }}</p>
+    </ng-template>
+
+    <!-- function -->
+    <p class="function">{{ currentFunction }}</p>
+
+    <!-- second number -->
+    <p *ngIf="isNotANumber(secondNumber); else second">
+        {{ '-' }}
+    </p>
+    <ng-template #second>
+        <p>{{ secondNumber | number: '1.0-9' }}</p>
+    </ng-template>
+
+    <!-- hr -->
+    <hr *ngIf="currentResult !== ''">
+
+    <!-- result -->
+    <p *ngIf="isNotANumber(currentResult); else resultNumber">
+        {{ currentResult }}
+    </p>
+    <ng-template #resultNumber>
+        <p class="result">{{ currentResult | number: '1.0-9' }}</p>
+    </ng-template>
 </div>

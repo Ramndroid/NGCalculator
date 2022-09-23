@@ -12,14 +12,14 @@ export class KeyboardComponent {
 
   operators = Operators;
   
-  keyboardNumbers = [
+  readonly keyboardNumbers: (number | Operators)[][] = [
     [7, 8, 9],
     [4, 5, 6],
     [1, 2, 3],
     [0, Operators.decimal, Operators.sign]
   ];
 
-  keyboardFunctions = [
+  readonly keyboardFunctions: Operators[] = [
     Operators.add,
     Operators.subtract,
     Operators.multiply,

@@ -1,11 +1,18 @@
 <div class="calculator">
 
     <!-- CALC-SCREEN -->
-    <calc-screen></calc-screen>
+    <calc-screen
+        [firstNumber]="firstNumber"
+        [secondNumber]="secondNumber"
+        [currentFunction]="currentFunction"
+        [currentResult]="result">
+    </calc-screen>
     <!-- END CALC-SCREEN -->
 
     <!-- CALC-KEYBOARD -->
-    <calc-keyboard></calc-keyboard>
+    <calc-keyboard
+        (keyboardOutput)="buttonPressed($event)">
+    </calc-keyboard>
     <!-- END CALC-KEYBOARD -->
 
 </div>

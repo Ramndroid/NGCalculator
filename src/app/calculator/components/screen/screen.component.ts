@@ -7,12 +7,15 @@ import { Component, Input } from '@angular/core';
 })
 export class ScreenComponent {
 
-  @Input() firstNumber: string = '3';
+  @Input() firstNumber: string = '';
 
-  @Input() secondNumber: string = '3';
+  @Input() secondNumber: string = '';
 
-  @Input() currentFunction: string = '+';
+  @Input() currentFunction: string = '';
 
-  @Input() currentResult: string = '6';
+  @Input() currentResult: string = '';
 
+  isNotANumber(value: string) {
+    return isNaN(Number(value));
+  }
 }
