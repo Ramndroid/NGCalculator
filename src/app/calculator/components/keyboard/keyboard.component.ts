@@ -8,8 +8,6 @@ import { Operators } from '../../enums/operators';
 })
 export class KeyboardComponent {
 
-  @Output() keyboardOutput = new EventEmitter<string>();
-
   operators = Operators;
   
   readonly keyboardNumbers: (number | Operators)[][] = [
@@ -26,6 +24,15 @@ export class KeyboardComponent {
     Operators.divide
   ]
 
+  /**
+   * Value issued by each key.
+   */
+  @Output() keyboardOutput = new EventEmitter<string>();
+
+  /**
+   * Button event trigger.
+   * @param item value of button (number, decimal, function, ...).
+   */
   onButtonClick(item: string | number | Operators) {
     this.keyboardOutput.emit(item.toString());
   }

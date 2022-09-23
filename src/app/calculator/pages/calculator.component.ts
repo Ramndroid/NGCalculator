@@ -26,6 +26,10 @@ export class CalculatorComponent {
     return this.calc.result;
   }
 
+  /**
+   * Button event trigger.
+   * @param item value of button (number, decimal, function, ...).
+   */
   buttonPressed(item: string) {
     this.calc.buttonPressed(item);
   }

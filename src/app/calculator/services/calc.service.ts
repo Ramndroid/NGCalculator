@@ -45,14 +45,26 @@ export class CalcService {
       this.onButtonFunctionClick(item);
   }
 
+  /**
+   * Checks if there is a main function defined.
+   * @returns true if the main function is not defined.
+   */
   private isFunctionNotDefined(): boolean {
     return this.currentFunction === '';
   }
 
+  /**
+   * Checks if there is currently a result in memory.
+   * @returns true if there is some result.
+   */
   private isCurrentResultNotEmpty(): boolean {
     return this.currentResult !== '';
   }
 
+  /**
+   * Entering a number by keyboard.
+   * @param item number to introduce.
+   */
   private onButtonNumberClick(item: string) {
     if (this.isFunctionNotDefined()) {
       this.firstNumber += item;
@@ -65,6 +77,10 @@ export class CalcService {
     }
   }
 
+  /**
+   * Entering a function, sign or decimal by keyboard.
+   * @param item operators, sign or decimal.
+   */
   private onButtonFunctionClick(item: string) {
 
     switch (item) {
@@ -87,6 +103,9 @@ export class CalcService {
 
   }
 
+  /**
+   * Erase all values.
+   */
   private eraseAll() {
     this.firstNumber = '';
     this.secondNumber = '';
@@ -96,6 +115,10 @@ export class CalcService {
     this.isCurrentDecimal = false;
   }
 
+  /**
+   * Add decimal element to current value.
+   * @param item Symbol to represent the decimal.
+   */
   private setDecimal(item: string) {
     if (!this.isCurrentDecimal) {
       this.isCurrentDecimal = true;
@@ -111,6 +134,9 @@ export class CalcService {
     }
   }
 
+  /**
+   * Adds a sign (+ or -) to the current value.
+   */
   private setSign() {
 
     if (this.isCurrentResultNotEmpty()) {
@@ -135,6 +161,10 @@ export class CalcService {
 
   }
 
+  /**
+   * Defines the operation to perform between the two numbers.
+   * @param item operation to perform.
+   */
   private setFunction(item: string) {
     if (this.isCurrentResultNotEmpty()) {
       this.firstNumber = this.currentResult;
@@ -152,6 +182,9 @@ export class CalcService {
     }
   }
 
+  /**
+   * Get the result of the operation between the two numbers.
+   */
   private getResult() {
 
     if (this.isFunctionNotDefined()) {

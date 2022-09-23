@@ -15,6 +15,11 @@ export class ScreenComponent {
 
   @Input() currentResult: string = '';
 
+  /**
+   * Check if a string returns NaN.
+   * @param value string to check.
+   * @returns returns true if the string returns NaN.
+   */
   isNotANumber(value: string) {
     return isNaN(Number(value));
   }
